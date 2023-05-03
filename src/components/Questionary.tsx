@@ -8,7 +8,7 @@ interface Props {
 }
 
 function Questionary(props: Props) {
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(-1);
 
   function GetListElement(index: number, value: string) {
     return (
@@ -22,11 +22,13 @@ function Questionary(props: Props) {
   }
 
   return (
-    <Card style={{ width: "30rem" }}>
-      <p>{props.heading}</p>
-      <ListGroup>
-        {props.promts.map((value, index) => GetListElement(index, value))}
-      </ListGroup>
+    <Card className="mb-5" style={{ width: "30rem" }}>
+      <Card.Header>{props.heading}</Card.Header>
+      <Card.Body>
+        <ListGroup horizontal>
+          {props.promts.map((value, index) => GetListElement(index, value))}
+        </ListGroup>
+      </Card.Body>
     </Card>
   );
 }
