@@ -22,7 +22,7 @@ function Questionary(props: Props) {
   }
 
   return (
-    <Card className="mb-5" style={{ width: "30rem" }}>
+    <Card className="mb-3" style={{ width: "30rem" }}>
       <Card.Header>{props.heading}</Card.Header>
       <Card.Body>
         <ListGroup horizontal>
