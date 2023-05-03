@@ -1,15 +1,30 @@
+import { useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 
-function Questionary() {
+interface Props {
+  promts: string[];
+  heading: string;
+}
+
+function Questionary(props: Props) {
+  const [currentIndex, setCurrentIndex] = useState(1);
+
+  function GetListElement(index: number, value: string) {
+    return (
+      <ListGroup.Item
+        active={index == currentIndex}
+        onClick={() => setCurrentIndex(index)}
+      >
+        {value}
+      </ListGroup.Item>
+    );
+  }
+
   return (
     <>
-      <p>"RS Questionary"</p>
+      <p>{props.heading}</p>
       <ListGroup>
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        <ListGroup.Item active>Dapibus ac facilisis in</ListGroup.Item>
-        <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-        <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+        {props.promts.map((value, index) => GetListElement(index, value))}
       </ListGroup>
     </>
   );
