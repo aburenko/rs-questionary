@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Card } from "react-bootstrap";
 import ListGroup from "react-bootstrap/ListGroup";
 
 interface Props {
@@ -21,12 +22,12 @@ function Questionary(props: Props) {
   }
 
   return (
-    <>
+    <Card style={{ width: "30rem" }}>
       <p>{props.heading}</p>
       <ListGroup>
         {props.promts.map((value, index) => GetListElement(index, value))}
       </ListGroup>
-    </>
+    </Card>
   );
 }
 
