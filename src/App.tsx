@@ -1,5 +1,6 @@
 import "./App.css";
 import { Questionary } from "./components/Questionary";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
