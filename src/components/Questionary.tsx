@@ -7,7 +7,7 @@ interface Props {
   heading: string;
 }
 
-function Questionary(props: Props) {
+function QuestionCard(props: Props) {
   const [currentIndex, setCurrentIndex] = useState(-1);
 
   function GetListElement(index: number, value: string) {
@@ -15,6 +15,7 @@ function Questionary(props: Props) {
       <ListGroup.Item
         active={index == currentIndex}
         onClick={() => setCurrentIndex(index)}
+        key={value}
       >
         {value}
       </ListGroup.Item>
@@ -33,4 +34,4 @@ function Questionary(props: Props) {
   );
 }
 
-export { Questionary };
+export { QuestionCard };
