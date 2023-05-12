@@ -48,6 +48,7 @@ function App() {
                 Erasmus stay feedback questionary
               </Navbar.Brand>
             </Navbar>
+            {questionaryTitles[currentQuestionary]}
 
             {MapQuestions(questionaries[questionaryTitles[currentQuestionary]])}
 
