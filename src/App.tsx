@@ -3,13 +3,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { QuestionCard } from "./components/QuestionaryCard";
 import { Row, Col, Container, Button, Navbar } from "react-bootstrap";
 import { useState } from "react";
+import questionaries from "./assets/question.json";
 
-function MapQuestions(questions: { [key: string]: string[] }) {
+interface QuestionaryPage {
+  [title: string]: string[];
+}
+
+function MapQuestions(questions: QuestionaryPage) {
   return (
     <>
       {Object.entries(questions).map((key_value_pair) => {
-        let items = key_value_pair[1];
         let topic = key_value_pair[0];
+        let items = key_value_pair[1];
         return <QuestionCard key={topic} promts={items} heading={topic} />;
       })}
     </>
@@ -17,11 +22,7 @@ function MapQuestions(questions: { [key: string]: string[] }) {
 }
 
 function App() {
-  let questions_first_page: { [key: string]: string[] } = {
-    Blub: ["Cras justo odio", "Dapibus ac facilisis in", "Morbi leo risus"],
-    Blab: ["Cras justo odio", "Dapibus ac facilisis in", "Morbi leo risus"],
-  };
-  let questionaries = [questions_first_page, questions_first_page];
+  let questionaryTitles = Object.keys(questionaries);
 
   const [currentQuestionary, setQuestionary] = useState(0);
 
@@ -43,12 +44,12 @@ function App() {
               </Navbar.Brand>
             </Navbar>
 
-            {MapQuestions(questionaries[currentQuestionary])}
+            {MapQuestions(questionaries[questionaryTitles[currentQuestionary]])}
 
             <div style={{ display: "flex", justifyContent: "right" }}>
               <Button
                 variant="primary"
-                hidden={currentQuestionary === questionaries.length - 1}
+                hidden={currentQuestionary === questionaryTitles.length - 1}
                 onClick={() => setQuestionary(currentQuestionary + 1)}
               >
                 Next part
