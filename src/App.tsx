@@ -52,10 +52,18 @@ function App() {
 
             {MapQuestions(questionaries[questionaryTitles[currentQuestionary]])}
 
-            <div style={{ display: "flex", justifyContent: "right" }}>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
               <Button
                 variant="primary"
-                hidden={currentQuestionary === questionaryTitles.length - 1}
+                disabled={currentQuestionary === 0}
+                onClick={() => setQuestionary(currentQuestionary - 1)}
+              >
+                Previous part
+              </Button>
+
+              <Button
+                variant="primary"
+                disabled={currentQuestionary === questionaryTitles.length - 1}
                 onClick={() => setQuestionary(currentQuestionary + 1)}
               >
                 Next part
