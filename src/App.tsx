@@ -38,7 +38,7 @@ function App() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#A4A4A4",
+          //backgroundColor: "#A4A4A4",
         }}
       >
         <Row>
