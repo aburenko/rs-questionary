@@ -59,14 +59,14 @@ function App() {
         <Row>
           <Col>
             <Navbar className="mb-4" expand="lg" variant="light" bg="light">
-              <Navbar.Brand href="#">
+              <Navbar.Brand href="#" className="navbar-title">
                 Erasmus stay feedback questionary
               </Navbar.Brand>
             </Navbar>
-            {questionaryTitles[currentQuestionary]}
-
+            <h1 className="questionary-title">
+              {questionaryTitles[currentQuestionary]}
+            </h1>
             {MapQuestions(questionaries[questionaryTitles[currentQuestionary]])}
-
             {nav_buttons()}
           </Col>
         </Row>

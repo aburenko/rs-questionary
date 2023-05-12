@@ -4,3 +4,13 @@
   justify-content: center;
   /* background-color: #A4A4A4; */
 }
+
+.navbar-title {
+  font-size: 35px;
+  margin-left: 8px;
+}
+
+.questionary-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
