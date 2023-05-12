@@ -55,14 +55,7 @@ function App() {
 
   return (
     <>
-      <Container
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          //backgroundColor: "#A4A4A4",
-        }}
-      >
+      <Container className="container-style">
         <Row>
           <Col>
             <Navbar className="mb-4" expand="lg" variant="light" bg="light">

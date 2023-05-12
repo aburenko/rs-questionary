@@ -1,0 +1,6 @@
+.container-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #A4A4A4; */
+}
