@@ -3,10 +3,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { QuestionCard } from "./components/QuestionaryCard";
 import { Row, Col, Container, Button, Navbar } from "react-bootstrap";
 import { useState } from "react";
-import questionaries from "./assets/question.json";
+import questionaries_object from "./assets/question.json";
 
 interface QuestionaryPage {
   [title: string]: string[];
+}
+
+interface Questionaries {
+  [key: string]: QuestionaryPage;
 }
 
 function MapQuestions(questions: QuestionaryPage) {
@@ -22,6 +26,7 @@ function MapQuestions(questions: QuestionaryPage) {
 }
 
 function App() {
+  let questionaries: Questionaries = questionaries_object;
   let questionaryTitles = Object.keys(questionaries);
 
   const [currentQuestionary, setQuestionary] = useState(0);
