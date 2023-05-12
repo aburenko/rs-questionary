@@ -31,6 +31,28 @@ function App() {
 
   const [currentQuestionary, setQuestionary] = useState(0);
 
+  const nav_buttons = () => {
+    return (
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <Button
+          variant="primary"
+          disabled={currentQuestionary === 0}
+          onClick={() => setQuestionary(currentQuestionary - 1)}
+        >
+          Previous part
+        </Button>
+
+        <Button
+          variant="primary"
+          disabled={currentQuestionary === questionaryTitles.length - 1}
+          onClick={() => setQuestionary(currentQuestionary + 1)}
+        >
+          Next part
+        </Button>
+      </div>
+    );
+  };
+
   return (
     <>
       <Container
@@ -52,23 +74,7 @@ function App() {
 
             {MapQuestions(questionaries[questionaryTitles[currentQuestionary]])}
 
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <Button
-                variant="primary"
-                disabled={currentQuestionary === 0}
-                onClick={() => setQuestionary(currentQuestionary - 1)}
-              >
-                Previous part
-              </Button>
-
-              <Button
-                variant="primary"
-                disabled={currentQuestionary === questionaryTitles.length - 1}
-                onClick={() => setQuestionary(currentQuestionary + 1)}
-              >
-                Next part
-              </Button>
-            </div>
+            {nav_buttons()}
           </Col>
         </Row>
       </Container>
